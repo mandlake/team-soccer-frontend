@@ -1,17 +1,21 @@
 import axios from 'axios';
 import { Heading } from 'components/Heading';
 import instance from 'config/axios-config';
+import { useRouter } from 'next/router';
 
 function Home() {
+  const router = useRouter();
   const clickButtonHandler = (e: any) => {
-    instance()
-      .get(`/${e.target.value}`)
-      .then((res: any) => {
-        alert(JSON.stringify(res));
-      })
-      .catch((error: any) => {
-        alert(JSON.stringify(error));
-      });
+    // instance()
+    //   .get(`/${e.target.value}`)
+    //   .then((res: any) => {
+    //     alert(JSON.stringify(res));
+    //   })
+    //   .catch((error: any) => {
+    //     alert(JSON.stringify(error));
+    //   });
+    alert(e.target.value);
+    router.push(`/players`);
   };
 
   const question = [
